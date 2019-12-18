@@ -1,0 +1,99 @@
+<---------------------------------------------------String Reverse------------------------------------------------------->
+import java.util.Scanner;
+public class Main{
+
+     public static void main(String []args){
+         Scanner sc=new Scanner(System.in);
+         String s=sc.nextLine(),revStr="";
+         for(int i=s.length()-1;i>=0;i--)
+         {
+             revStr=revStr+s.charAt(i);
+         }
+         System.out.print(revStr);
+     }
+}
+
+<-------------------------------------------------Swapping of Numbers----------------------------------------------------->
+import java.util.Scanner;
+public class Main{
+
+     public static void main(String []args){
+         Scanner sc=new Scanner(System.in);
+         int num1=sc.nextInt();
+         int num2=sc.nextInt();
+         System.out.println("The numbers before swapping is "+num1+" and "+num2);
+         int temp=num1;
+         num1=num2;
+         num2=temp;
+          System.out.println("The numbers after swapping is "+num1+" and "+num2);
+     }
+}
+
+<--------------------------------------Counting number of words in a string------------------------------------------------>
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+public class Main{
+
+     public static void main(String []args){
+         HashMap<String,Integer> hm=new HashMap<String,Integer>();
+         Scanner sc=new Scanner(System.in);
+         String s[]=sc.nextLine().toLowerCase().split(" ");
+         for(int i=0;i<s.length;i++)
+         {
+             if((hm.containsKey(s[i])==true))
+             {
+                 int v=hm.get(s[i]);
+                 hm.replace(s[i],v+1);
+             }
+             else
+             {
+                 hm.put(s[i],1);
+             }
+         }
+         Iterator it=hm.entrySet().iterator();
+         while(it.hasNext())
+         {
+            Map.Entry mk=(Map.Entry)it.next();
+            System.out.print(mk.getKey()+" "+mk.getValue()+"|");
+         }
+     }
+}
+
+
+<-------------------------------------------Checking whether prime or not----------------------------------------------->
+import java.util.Scanner;
+public class Main{
+
+     public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),count=0;
+        if((n!=0)&&(n!=1))
+        {
+            for(int i=1;i<n/2;i++)
+            {
+                if(n%i==0)
+                {
+                    count=count+1;
+                }
+            }
+            if(n%n==0)
+            {
+                count=count+1;
+            }
+            if(count>2)
+            {
+                System.out.println("Prime number");
+            }
+            else
+            {
+                System.out.println("Not a prime number");
+            }
+        }
+        else
+        {
+            System.out.println("Not a prime number");
+        }
+     }
+}
