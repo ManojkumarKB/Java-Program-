@@ -1,0 +1,218 @@
+<---------------------------------------------------String Reverse------------------------------------------------------->
+import java.util.Scanner;
+public class Main{
+
+     public static void main(String []args){
+         Scanner sc=new Scanner(System.in);
+         String s=sc.nextLine(),revStr="";
+         for(int i=s.length()-1;i>=0;i--)
+         {
+             revStr=revStr+s.charAt(i);
+         }
+         System.out.print(revStr);
+     }
+}
+
+<-------------------------------------------------Swapping of Numbers----------------------------------------------------->
+import java.util.Scanner;
+public class Main{
+
+     public static void main(String []args){
+         Scanner sc=new Scanner(System.in);
+         int num1=sc.nextInt();
+         int num2=sc.nextInt();
+         System.out.println("The numbers before swapping is "+num1+" and "+num2);
+         int temp=num1;
+         num1=num2;
+         num2=temp;
+          System.out.println("The numbers after swapping is "+num1+" and "+num2);
+     }
+}
+
+<--------------------------------------Counting number of words in a string------------------------------------------------>
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+public class Main{
+
+     public static void main(String []args){
+         HashMap<String,Integer> hm=new HashMap<String,Integer>();
+         Scanner sc=new Scanner(System.in);
+         String s[]=sc.nextLine().toLowerCase().split(" ");
+         for(int i=0;i<s.length;i++)
+         {
+             if((hm.containsKey(s[i])==true))
+             {
+                 int v=hm.get(s[i]);
+                 hm.replace(s[i],v+1);
+             }
+             else
+             {
+                 hm.put(s[i],1);
+             }
+         }
+         Iterator it=hm.entrySet().iterator();
+         while(it.hasNext())
+         {
+            Map.Entry mk=(Map.Entry)it.next();
+            System.out.print(mk.getKey()+" "+mk.getValue()+"|");
+         }
+     }
+}
+
+
+<-------------------------------------------Checking whether prime or not----------------------------------------------->
+import java.util.Scanner;
+public class Main{
+
+     public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),count=0;
+        if((n!=0)&&(n!=1))
+        {
+            for(int i=1;i<n/2;i++)
+            {
+                if(n%i==0)
+                {
+                    count=count+1;
+                }
+            }
+            if(n%n==0)
+            {
+                count=count+1;
+            }
+            if(count>2)
+            {
+                System.out.println("Prime number");
+            }
+            else
+            {
+                System.out.println("Not a prime number");
+            }
+        }
+        else
+        {
+            System.out.println("Not a prime number");
+        }
+     }
+}
+
+
+<--------------------------------------------------------------------------------Arraylist three loops-------------------------------------------------------->
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class tasks {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("Java");
+		al.add("C++");
+		al.add("C");
+		al.add("Php");
+		System.out.println("Using for each loop");
+		for(int i=0;i<al.size();i++)
+		{
+			System.out.print(al.get(i)+" ");
+		}
+		System.out.println("\nUsing while loop");
+		Iterator it=al.iterator();
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+		System.out.println("\nUsing Advance for loop");
+		for(String s:al)
+		{
+			System.out.print(s+" ");
+		}
+	}
+}
+
+<-------------------------------------------------------------Finding duplicate characters in a string--------------------------------------------------->
+import java.util.Scanner;
+public class DupString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next().toLowerCase(),dupStr="";
+		for(int i=0;i<s.length();i++)
+		{
+			for(int j=i+1;j<s.length();j++)
+			{
+				if(s.charAt(i)==s.charAt(j))
+				{
+					dupStr=dupStr+s.charAt(i)+" ";
+				}
+			}
+		}
+		dupStr=dupStr.trim();
+		System.out.println("The duplicate characters in a strings are \""+dupStr+"\"");
+	}
+
+}
+
+<--------------------------------------------------------------Finding second highest number in an array--------------------------------------->4
+package first;
+public class FindSecLarge {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]={23,43,53,12,46};
+		int[] r=maxNum(arr);
+		arr[r[1]]=-1;
+		int[] r1=maxNum(arr);
+		System.out.println("The second largest number is "+r1[0]);
+	}
+	static int[] maxNum(int[] arr)
+	{
+		int max=0,ind=0,res[]=new int[2];
+		for(int i=0;i<arr.length;i++)
+		{
+			if(max<arr[i])
+			{
+				max=arr[i];
+				ind=i;
+			}
+		}
+		res[0]=max;
+		res[1]=ind;
+		return res;
+	}
+}
+
+
+<----------------------------------------------------------------Replacing with replace method-------------------------------------------->
+package first;
+public class RemSpRepm {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try
+		{
+		String s="public static void main",str="",m=s;
+		for(int i=0;i<s.length()-1;i++)
+		{
+			if(s.charAt(i)==' ')
+			{
+				s=s+s.replace(s.substring(i,i+1), s.substring(i+1,s.length()));
+				System.out.println(s);
+				//System.out.println("\t"+s.substring(i,i+1));
+				//System.out.println(s.substring(i+1));
+			}
+		}
+		System.out.println(str);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
+
+
