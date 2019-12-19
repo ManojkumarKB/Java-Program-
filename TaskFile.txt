@@ -97,3 +97,240 @@ public class Main{
         }
      }
 }
+
+
+<--------------------------------------------------------------------------------Arraylist three loops-------------------------------------------------------->
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class tasks {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("Java");
+		al.add("C++");
+		al.add("C");
+		al.add("Php");
+		System.out.println("Using for each loop");
+		for(int i=0;i<al.size();i++)
+		{
+			System.out.print(al.get(i)+" ");
+		}
+		System.out.println("\nUsing while loop");
+		Iterator it=al.iterator();
+		while(it.hasNext())
+		{
+			System.out.print(it.next()+" ");
+		}
+		System.out.println("\nUsing Advance for loop");
+		for(String s:al)
+		{
+			System.out.print(s+" ");
+		}
+	}
+}
+
+<-------------------------------------------------------------Finding duplicate characters in a string--------------------------------------------------->
+import java.util.Scanner;
+public class DupString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next().toLowerCase(),dupStr="";
+		for(int i=0;i<s.length();i++)
+		{
+			for(int j=i+1;j<s.length();j++)
+			{
+				if(s.charAt(i)==s.charAt(j))
+				{
+					dupStr=dupStr+s.charAt(i)+" ";
+				}
+			}
+		}
+		dupStr=dupStr.trim();
+		System.out.println("The duplicate characters in a strings are \""+dupStr+"\"");
+	}
+
+}
+
+<--------------------------------------------------------------Finding second highest number in an array--------------------------------------->4
+pimport java.util.Scanner;
+public class FindSecLarge {
+		static int arr[];
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of elements");
+		int n=sc.nextInt(),max=0;
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+			arr[i]=sc.nextInt();
+		max=maxNum(arr);
+		for(int i=0;i<arr.length;i++)
+		{
+			if(max==arr[i])
+			{
+				arr[i]=-1;
+			}
+		}
+		max=maxNum(arr);
+		System.out.println("The second largest number is "+max);
+	}
+	static int maxNum(int[] arr)
+	{
+		int max=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(max<arr[i])
+			{
+				max=arr[i];
+			}
+		}
+		return max;
+	}
+}
+
+
+<----------------------------------------------------------------Replacing with replace method with method-------------------------------------------->
+import java.util.Scanner;
+public class RepSpWithMeth {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		s=s.replaceAll("\\s","");
+		System.out.println(s);
+	}
+}
+
+
+
+<---------------------------------------------------------Replacing a space using replace method without method  in java----------------------------------------------------------------------------------------------------->
+import java.util.Scanner;
+public class RemSpRepm {
+	public static String s="";
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		try
+		{
+			System.out.println("Enter the sentence");
+		s=sc.nextLine();
+		for(int i=s.length()-1;i>=0;i--)
+		{
+			if(s.charAt(i)==' ')
+			{
+				s=swap(i);
+			}
+		}
+		System.out.println(s);
+        }
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	static String swap(int i)
+	{
+		char c[]=s.toCharArray();
+		String s="";
+	
+		for(int it=i;it<=c.length-2;it++)
+		{
+			
+			char t=c[it];
+				c[it]=c[it+1];
+				c[it+1]=t;
+		}
+			for(int iy=0;iy<c.length;iy++)
+			{
+				s=s+(c[iy]);
+				
+			}
+		return s;
+	}
+	
+}
+
+<----------------------------------------------------------------------------------------Reading Excel file Using Java program--------------------------------------------------------------------->
+import java.io.File;
+import java.io.FileInputStream;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;;
+
+public class ExcelRead
+{
+	public static void main(String[] args) throws FileNotFoundException, IOException
+	{
+		//writeIntoExcel("birthdays.xlsx"); 
+		readFromExcel("book.xlsx");
+	}
+	public static void readFromExcel(String file) throws IOException
+	{
+		
+		ArrayList<ArrayList> st=new ArrayList<ArrayList>();
+		File fil=new File(file);
+		FileInputStream f	= new FileInputStream(file);
+		XSSFWorkbook myExcelBook = new XSSFWorkbook(f);
+		if(fil.isFile()&&(fil.exists()))
+		{
+			System.out.println("The file exist");
+		}
+		else
+		{
+			System.out.println("Not found");
+		}
+		XSSFSheet myExcelSheet = myExcelBook.getSheetAt(0);
+		java.util.Iterator<Row> itr = myExcelSheet.iterator();
+	    while (itr.hasNext()) 
+	    {
+	    	ArrayList data = new ArrayList();
+	        Row rowitr = (Row) itr.next();
+	        java.util.Iterator<Cell> cellitr = rowitr.cellIterator();
+	        while(cellitr.hasNext()) 
+	        {
+	            Cell celldata = (Cell) cellitr.next();
+
+	            switch(celldata.getCellType()) 
+	            {
+	            case STRING:
+	                data.add(celldata.getStringCellValue());
+	                System.out.print(celldata.getStringCellValue()+" ");
+	                break;
+	            case NUMERIC:
+	                data.add(celldata.getNumericCellValue());
+	                System.out.print((celldata.getNumericCellValue())+" ");
+	                break;
+	            	
+	            
+	            }
+	            
+	        }
+	        System.out.println();
+	        st.add(data);
+	    }
+	    for(ArrayList al:st)
+	    {
+	    	System.out.println(al);
+	    }
+	}
+}
+
+ jar file downloaded at  :  https://www.apache.org/dyn/closer.lua/poi/release/bin/poi-bin-4.1.1-20191023.zip
+ 
+
+
+<-----------------------------------------------------------Uploading a image file only and displaying the uploaded image------------------------------------------------------------------------------------>
+
+
+
