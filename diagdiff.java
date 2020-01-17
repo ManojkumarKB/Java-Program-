@@ -1,3 +1,4 @@
+//Finding the differences between two  digonals
 import java.util.*;
 class diagdiff
 {
