@@ -1,0 +1,449 @@
+				<------------------------------------Git -------------------------------------->
+Download and instal the git
+	In the end of the document the complete git bash was pasted
+	
+	The username and mail id was given to enter into the central repository(repo)
+	
+	The cloning of the repsitory needed was done, that concept is called the forking
+	
+	When the repository was cloned, the complete files in that repo at central repository was copied into the local directory. 
+	
+	When the file was cloned, the origin will be the repo default name, and the master is the branch default name.
+	
+	The New branch will be created and the changes will be made and then the merge into the master branch, the branch name wants, first letter in the lower case.
+
+	The changes made in the new branch will be get separated from the master branch
+
+	The changes made in the new branch have to merge with the master branch and then push have to be done to effect in the master branch.
+
+	
+
+			<------------------$ git config-------------------->
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~
+<-------------------------------------cmd--------------------------------$ git config --global user.name ManojkumarKB------------------------------------------>
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~
+<-------------------------------------cmd--------------------------------$ git config --global user.email manojbhaskaran1998@gmail.com------------------------------------------>
+
+		**Cloning the repository named Java-program-**
+<-------------------------------------------------------------------------$ git clone https://github.com/ManojkumarKB/Java-Program-.git-------------------------------->
+Cloning into 'Java-Program-'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 163 (delta 0), reused 1 (delta 0), pack-reused 160
+Receiving objects: 100% (163/163), 40.64 MiB | 2.40 MiB/s, done.
+Resolving deltas: 100% (59/59), done.
+warning: the following paths have collided (e.g. case-sensitive paths
+on a case-insensitive filesystem) and only one from the same
+colliding group is in the working tree:
+
+  'TaskFile.txt'
+  'taskFile.txt'
+
+
+		**The directing to the repsository folder**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~
+<-----------------------------------------------------------------------$ cd Java-Program----------------------->
+
+		**The remote names**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-----------------------------------------------------------------------$ git remote---------------------->
+origin
+
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git remote -v
+origin  https://github.com/ManojkumarKB/Java-Program-.git (fetch)
+origin  https://github.com/ManojkumarKB/Java-Program-.git (push)
+
+		**Creating the newfile**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ touch newfile.txt
+
+		** Starting the new file**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ start notepad newfile.txt
+
+		**Seeing the status**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git add newfile.txt
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   newfile.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   newfile.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+		**Commiting the changes made before that adding have to be done**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git commit -m "newfile.txt
+> git commit -m "newfile.txt"
+> git commit -m "newfile.txt
+git commit -m "newfile.txt"
+[master 944e728] newfile.txt git commit -m newfile.txt git commit -m newfile.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfile.txt
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        modified:   TaskFile.txt
+
+no changes added to commit
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+		** Pushing**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ManojkumarKB/Java-Program-.git
+   65411cf..944e728  master -> master
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+		** Creating the new Branch**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git branch Newbranch
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git checkout NewBranch
+Switched to branch 'NewBranch'
+M       TaskFile.txt
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git branch
+  Newbranch
+  master
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git branch -a
+  Newbranch
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+		** Error for mistaken branch name**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git push --set -upstream origin NewBranch
+error: unknown switch `p'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --recurse-submodules[=(check|on-demand|no)]
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git push --set-upstream origin NewBranch
+fatal: NewBranch cannot be resolved to branch
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git checkout master
+Switched to branch 'master'
+M       TaskFile.txt
+Your branch is up to date with 'origin/master'.
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git push --set-upstream origin NewBranch
+fatal: NewBranch cannot be resolved to branch
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git checkout NewBranch
+Switched to branch 'NewBranch'
+M       TaskFile.txt
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git push --set-upstream origin NewBranch
+fatal: NewBranch cannot be resolved to branch
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ ^C
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git branch -a
+  Newbranch
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git branch
+  Newbranch
+  master
+
+		** creating the new corrected branch name**
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+<-------------------command---------------------------------------------------->$ git branch newbran
+
+		
+		** Moving into that new branch created**
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (NewBranch)
+$ git checkout newbran
+Switched to branch 'newbran'
+M       TaskFile.txt
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+<-------------------command---------------------------------------------------->$ git push --set-upstream origin newbran
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'newbran' on GitHub by visiting:
+remote:      https://github.com/ManojkumarKB/Java-Program-/pull/new/newbran
+remote:
+To https://github.com/ManojkumarKB/Java-Program-.git
+ * [new branch]      newbran -> newbran
+Branch 'newbran' set up to track remote branch 'newbran' from 'origin'.
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+$ start newfile.txt
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+$ git status
+On branch newbran
+Your branch is up to date with 'origin/newbran'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+        modified:   newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+$ git add newfile.txt
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+<-------------------command---------------------------------------------------->$ git status
+On branch newbran
+Your branch is up to date with 'origin/newbran'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   newfile.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+<-------------------command---------------------------------------------------->$ git commit -m "newfile.txt"
+[newbran ad8432b] newfile.txt
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+<-------------------command---------------------------------------------------->$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 329 bytes | 329.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ManojkumarKB/Java-Program-.git
+   944e728..ad8432b  newbran -> newbran
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+$ git push --set-upstream origin newbran
+Everything up-to-date
+Branch 'newbran' set up to track remote branch 'newbran' from 'origin'.
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (newbran)
+<-------------------command---------------------------------------------------->$ git checkout master
+Switched to branch 'master'
+M       TaskFile.txt
+Your branch is up to date with 'origin/master'.
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git puuch
+git: 'puuch' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git push
+Everything up-to-date
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TaskFile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git merge newbran
+Updating 944e728..ad8432b
+Fast-forward
+ newfile.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/ManojkumarKB/Java-Program-.git
+   944e728..ad8432b  master -> master
+
+		** Deleting the branch**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+<-------------------command---------------------------------------------------->$ git branch -d newbran
+Deleted branch newbran (was ad8432b).
+	
+		*making to effect at the master branch**
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$ git push origin --delete newbran
+To https://github.com/ManojkumarKB/Java-Program-.git
+ - [deleted]         newbran
+
+Trainee@VTG-CBE-INT-D005 MINGW64 ~/Java-Program- (master)
+$
